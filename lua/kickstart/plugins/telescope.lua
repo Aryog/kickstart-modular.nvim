@@ -110,5 +110,31 @@ return {
       end, { desc = '[S]earch [N]eovim files' })
     end,
   },
+  { -- Neo-tree plugin configuration
+    'nvim-neo-tree/neo-tree.nvim',
+    version = '*',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+      'MunifTanjim/nui.nvim',
+    },
+    cmd = 'Neotree',
+    keys = {
+      { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
+    },
+    opts = {
+      filesystem = {
+        filtered_items = {
+          visible = true, -- This makes hidden files visible
+          hide_dotfiles = false, -- Show dotfiles
+        },
+        window = {
+          mappings = {
+            ['\\'] = 'close_window',
+          },
+        },
+      },
+    },
+  },
 }
 -- vim: ts=2 sts=2 sw=2 et
