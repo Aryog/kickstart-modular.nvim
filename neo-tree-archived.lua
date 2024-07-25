@@ -20,6 +20,7 @@ return {
         hide_dotfiles = false, -- Show dotfiles
       },
       window = {
+        width = 0.2,
         mappings = {
           ['\\'] = 'close_window',
         },
